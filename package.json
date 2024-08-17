@@ -1,0 +1,50 @@
+{
+  "name": "job",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^1",
+    "@sap-cloud-sdk/resilience": "^3.18.1",
+    "@sap-cloud-sdk/http-client": "^3.18.1",
+    "@sap-cloud-sdk/util": "^3.18.1",
+    "@sap/cds": "^7.9.2",
+    "@sap/xssec": "^4.2.1",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-typer": "^0.25.0",
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8.1.2",
+    "@sap/eslint-plugin-cds": "^3",
+    "@sap/hdi-deploy": "^5.2.1",
+    "eslint": "^9"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "[development]": {
+        "db": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": "sqlite.db"
+          }
+        }
+      },
+      "[production]": {
+        "db": "hana",
+        "auth": "basic"
+      },
+      "API_WEATHER_SERVICE": {
+        "kind": "rest",
+        "credentials": {
+          "url": "https://api.openweathermap.org"
+        }
+      }
+    }
+  }
+}
