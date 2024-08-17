@@ -43,7 +43,7 @@ class ClimaImpl extends cds.ApplicationService {
         } catch (error) {
           tx.rollback();
 
-          console.error(`[error] Dados inseridos com error`);
+          console.error(`[error] Erro ao inserir os dados`);
         }
 
         console.info(
