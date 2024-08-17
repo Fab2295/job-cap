@@ -11,5 +11,5 @@ entity Clima : cuid {
         temperatura_maxima : Double;
         umidade            : Integer;
         pressao            : Integer;
-        velocidade_vento   : Integer;
+        velocidade_vento   : Double;
 }
